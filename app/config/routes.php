@@ -5,6 +5,9 @@ use Phalcon\Mvc\Router\Group as RouterGroup;
 
 $router = new Router();
 
+// 末尾のスラッシュを自動的に取り除く
+$router->removeExtraSlashes(true);
+
 $group = new RouterGroup();
 $group->setPrefix('/api');
 
