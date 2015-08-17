@@ -8,7 +8,11 @@ $router = new Router();
 $group = new RouterGroup();
 $group->setPrefix('/api');
 
-$group->addGet('/items', 'Items::all');
+$group->addGet('/items', 'Items::index');
+$group->addGet('/items/{id:[0-9]+}', 'Items::get');
+$group->addPost('/items', 'Items::create');
+$group->addPut('/items/{id:[0-9]+}', 'Items::update');
+$group->addDelete('/items/{id:[0-9]+}', 'Items::delete');
 
 $router->mount($group);
 
