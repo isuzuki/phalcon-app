@@ -29,6 +29,13 @@ $di->set('url', function () use ($config) {
 }, true);
 
 /**
+ * Setting up routes
+ */
+$di->set('router', function() {
+    return require APP_PATH .'/app/config/routes.php';
+});
+
+/**
  * Setting up the view component
  */
 $di->setShared('view', function () use ($config) {
