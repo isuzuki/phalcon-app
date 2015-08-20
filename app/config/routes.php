@@ -8,14 +8,15 @@ $router = new Router();
 // 末尾のスラッシュを自動的に取り除く
 $router->removeExtraSlashes(true);
 
+// items APIのルーティング定義
 $group = new RouterGroup();
-$group->setPrefix('/api');
+$group->setPrefix('/api/items');
 
-$group->addGet('/items', 'Items::index');
-$group->addGet('/items/{id:[0-9]+}', 'Items::get');
-$group->addPost('/items', 'Items::create');
-$group->addPut('/items/{id:[0-9]+}', 'Items::update');
-$group->addDelete('/items/{id:[0-9]+}', 'Items::delete');
+$group->addGet('', 'Items::index');
+$group->addGet('{id:[0-9]+}', 'Items::get');
+$group->addPost('', 'Items::create');
+$group->addPut('{id:[0-9]+}', 'Items::update');
+$group->addDelete('{id:[0-9]+}', 'Items::delete');
 
 $router->mount($group);
 
