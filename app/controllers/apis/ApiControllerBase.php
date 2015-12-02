@@ -6,7 +6,7 @@ use Phalcon\Mvc\Dispatcher;
 /**
  * API用ベースコントローラー
  */
-class ApiControllerBase extends Controller
+class ApiControllerBase extends ControllerBase
 {
     public function afterExecuteRoute(Dispatcher $dispacher)
     {

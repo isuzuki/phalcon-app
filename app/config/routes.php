@@ -20,4 +20,13 @@ $group->addDelete('{id:[0-9]+}', 'Items::delete');
 
 $router->mount($group);
 
+// ajax APIのルーティング定義
+$router->addGet('/ajax', 'Ajax::index')
+    ->setName('ajax.index')
+    ->beforeMatch(function($uri, $route, $router) {
+        return $router->getDI()
+            ->get('request')
+            ->isAjax();
+    });
+
 return $router;
