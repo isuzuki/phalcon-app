@@ -15,8 +15,8 @@ class ControllerBase extends Controller
         /**
          * ルーティングにマッチしない場合は、404エラーにフォワード
          */
-        if ($this->requireRouteMatched
-            && is_null($this->router->getMatchedRoute()->getName())) {
+        if ($this->requireRouteMatched &&
+            is_null($this->router->getMatchedRoute()->getName())) {
             return $dispacher->forward([
                 'controller' => 'error',
                 'action' => 'notFound',
