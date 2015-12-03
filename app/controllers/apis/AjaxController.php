@@ -2,6 +2,7 @@
 
 class AjaxController extends ApiControllerBase
 {
+    protected $requireRouteMatched = true;
 
     public function indexAction()
     {

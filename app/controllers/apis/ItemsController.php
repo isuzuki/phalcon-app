@@ -2,8 +2,6 @@
 
 class ItemsController extends ApiControllerBase
 {
-    protected $requireRouteMatched = false;
-
     public function indexAction()
     {
         return Items::find()->toArray();
